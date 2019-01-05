@@ -1,0 +1,7 @@
+.main {
+  background: url('../../img/imagenesBase/main-fondo.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}

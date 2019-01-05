@@ -1,0 +1,18 @@
+.App {
+  background: url('img/imagenesBase/login-fondo.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.form{
+  margin-top: 15%;
+  margin-left: 35%;
+  margin-right: 35%;
+  color: White;
+}
+
+.form-group #text-center{
+  text-align: center;
+}
