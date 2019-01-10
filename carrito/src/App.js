@@ -1,31 +1,48 @@
 import React, { Component } from 'react';
 import './App.css';
+import fire from './server/serve';
+import Main from './components/main/main';
+import Login from './components/login/login';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      user:{}
+    }
+    //this.handleChange1 = this.handleChange1.bind(this);
+    //this.handleChange2 = this.handleChange2.bind(this);
+  }
+
+  componentDidMount(){
+    this.authListener();
+  }
+
+  authListener(){
+    fire.auth().onAuthStateChanged((user)=>{
+      if (user) {
+        this.setState({user});
+      }else {
+        this.setState({user:null})
+      }
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="form">
-        <form>
-          <div className="form-group">
-            <h2 id="text-center">Iniciar sesión</h2>
-            <label>Email:</label>
-            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-          </div>
-          <div className="form-group">
-            <label>Password:</label>
-            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
-          </div>
-          <button type="button" onClick={this.verifySession.bind(this)} className="btn btn-primary">Ingresar</button>
-        </form>
-        </div>
+        {this.state.user ? (<Main/>) : (<Login />)}
       </div>
     );
   }
 
-  verifySession(){
-    console.log("funciona")
+  handleChange1(event) {
+    this.setState({user: event.target.value});
   }
+  handleChange2(event) {
+    this.setState({password: event.target.value});
+  }
+
 }
 
 export default App;

@@ -1,0 +1,32 @@
+.product{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.scroll{
+  overflow-y: scroll;
+   max-height: 650px;
+}
+
+.color{
+  color: white;
+}
+
+.card{
+  margin: 0.5%;
+  width: 18rem;
+}
+
+.card-img-top{
+  height: 150px;
+  width: 286px;
+}
+
+.btn{
+  color: white;
+}
+
+.long{
+  margin-left: 45%;
+  width: 35%;
+}
